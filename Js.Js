@@ -29,14 +29,14 @@ for( let i= 0;  i < numbers.length; i++){
         unpairedNegativeElemSum += numbers[i];
     }
 }
-let unpairedNegativeSum = 0
+let unpairedPositivSum = 0
 
 let unpairedPositivElements = 0
 for( let i = 0; i < numbers.length; i++){
     if(numbers[i]>0 && numbers[i] % 2 !==0){
         
         unpairedPositivElements++
-        unpairedNegativeSum += numbers[i]
+        unpairedPositivSum += numbers[i]
     }
 }
 let evenPositivSum = 0
@@ -62,5 +62,5 @@ alert(`Максимальний елемент: ${maxNumber},
       Кількість непарних позитивних елементів: ${unpairedPositivElements},
       Кількість парних позитивних елементів: ${evenPositivElements},
       Cума парних позитивних елементів: ${evenPositivSum},
-      Сума непарних позитивних елементів: ${unpairedNegativeSum}
+      Сума непарних позитивних елементів: ${unpairedPositivSum}
       Добуток позитивних елементів: ${positivElementsAllMult}`)
