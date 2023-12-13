@@ -1,16 +1,16 @@
 debugger
 const numbers = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47]
 let maxNumber = numbers[0]
-let maxNumberIndex = 0
+let  maxNumberIndex = 0
 for( let i = 1; i < numbers.length; i++){
     if(numbers[i] > maxNumber){
          maxNumber = numbers[i]
-         maxNumberIndex2 = i
+         maxNumberIndex = i
     }
 }
 console.log('Максимальний елемент:', maxNumber)
-positivElemSum = 0
-positivElem = 0
+let positivElemSum = 0
+let positivElem = 0
 
 for( let i= 0;  i < numbers.length; i++){
     if(numbers[i]>0){
@@ -21,44 +21,46 @@ for( let i= 0;  i < numbers.length; i++){
 }
 
 
-negativeElemSum = 0
-negativeElem = 0
+let unpairedNegativeElemSum = 0
+let unpairedNegativeElem = 0
 for( let i= 0;  i < numbers.length; i++){
     if(numbers[i]<0){
-        negativeElem++
-     negativeElemSum += numbers[i];
+        unpairedNegativeElem++
+        unpairedNegativeElemSum += numbers[i];
     }
 }
-negativeElementsSum = 0
-elements = 0
+let unpairedNegativeSum = 0
+
+let unpairedPositivElements = 0
 for( let i = 0; i < numbers.length; i++){
     if(numbers[i]>0 && numbers[i] % 2 !==0){
-        elements++
-        negativeElementsSum += numbers[i]
+        
+        unpairedPositivElements++
+        unpairedNegativeSum += numbers[i]
     }
 }
-positivElementsSum = 0
-positivElements = 0
+let evenPositivSum = 0
+let evenPositivElements = 0
 for(let i = 0 ; i < numbers.length; i++){
     if(numbers[i]>0 && numbers[i] % 2 === 0){
-        positivElements++
-        positivElementsSum += numbers[i]
+        evenPositivElements++
+        evenPositivSum += numbers[i]
     }
 }
-positivElementsAllMult = 1
+let positivElementsAllMult = 1
 for( let i= 0;  i < numbers.length; i++){
     if(numbers[i]>0){
-       
-     positivElementsAllMult = positivElementsSum * negativeElementsSum ;
+
+     positivElementsAllMult *= numbers[i] ;
     }
 }
 alert(`Максимальний елемент: ${maxNumber}, 
-      Індекс максимального числа ${maxNumberIndex2},
+      Індекс максимального числа ${maxNumberIndex},
       Кількість позитивних елементів:  ${positivElem},
       Cума позитивних елементів: ${positivElemSum},
-      Кількість негативних елементів:${negativeElem},
-      Кількість непарних позитивних елементів: ${elements},
-      Кількість парних позитивних елементів: ${positivElements},
-      Cума парних позитивних елементів: ${positivElementsSum},
-      Сума непарних позитивних елементів: ${negativeElementsSum}
+      Кількість негативних елементів:${unpairedNegativeElem},
+      Кількість непарних позитивних елементів: ${unpairedPositivElements},
+      Кількість парних позитивних елементів: ${evenPositivElements},
+      Cума парних позитивних елементів: ${evenPositivSum},
+      Сума непарних позитивних елементів: ${unpairedNegativeSum}
       Добуток позитивних елементів: ${positivElementsAllMult}`)
